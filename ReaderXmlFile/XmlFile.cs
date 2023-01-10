@@ -51,7 +51,7 @@ namespace ReaderXmlFile
                     }
                 }
             }
-            Console.WriteLine("Файл загружен");
+            Console.WriteLine("File uploaded");
 
             XmlDocument forintXmlDocument = new XmlDocument();
             forintXmlDocument.LoadXml(ForintXml);
@@ -66,7 +66,7 @@ namespace ReaderXmlFile
             xmlNodeNominal = norwayCronXmlDocument.SelectSingleNode("Valute/Nominal");
             decimal norwayCronValue = Convert.ToDecimal(xmlNodeValue.InnerText) / Convert.ToDecimal(xmlNodeNominal.InnerText);
 
-            Console.WriteLine($"1 крон(а) --> {norwayCronValue} рубль(ей) --> {norwayCronValue / forintValue} форинт");
+            Console.WriteLine($"1 Crown --> {norwayCronValue} Rubles --> {norwayCronValue / forintValue} Forint");
 
             Console.Read();
         }
